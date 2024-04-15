@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>2019312137 윤효정</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+            font-family: ‘맑은 고딕’, ‘Malgun Gothic’, Gothic, sans-serif;
+        }
+        a { 
+            text-decoration: none; 
+        }
+        li { 
+            list-style: none; 
+        }
+        body {
+            width: 1000px; 
+            margin: 0 auto; 
+            background: #E6E6E6;
+        }
+        #page-wrapper {
+            background: white;
+            margin: 40px; 
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        } 
+        #main-header { 
+            padding: 50px 0px 50px 20px; 
+        } 
+        .background{
+            border-radius: 5px 5px 0 0;
+            margin: -60px 0px -35px -40px; 
+        }
+        .master-emoticon {
+            font-size: 60px;
+        }
+        .master-title {
+            font-size: 30px;
+            color: #181818;
+        }
+        .master-description {
+            font-size: 15px; 
+            font-weight: 500;
+            color: #383838;
+        }
+        #main-navigation {
+            border-bottom: 1px solid #eeeeee;
+            margin-bottom: 20px;
+            padding: 0 15px 15px 15px;
+        }
+        .outer-menu-item {
+            height: 30px;
+            float: left;
+            position: relative;
+        } 
+        /* .outer-menu-item:hover { 
+            background: rgb(177, 60, 60); 
+            color: rgb(255, 255, 255);
+        } */
+        .menu-title {
+            display: block;
+            height: 25px; 
+            line-height: 25px;
+            text-align: center;
+            padding: 5px 15px;
+            background: rgb(244, 243, 243);
+            color: rgb(213, 76, 76);
+            border-radius: 10px;
+            margin-right: 10px;
+
+        }
+        .menu-title > a {
+            text-decoration: none;
+        }
+        .menu-title:hover{
+            color: rgb(36, 48, 101);
+        }
+        .best {
+            background: rgb(244, 243, 243);
+            color: rgb(36, 48, 101);
+        }
+        .inner-menu {
+            display: none;
+            position: absolute;
+            top: 28px; left: 0;
+            width: 86%;
+            background:  rgb(244, 243, 243);
+            border-radius: 0 0 15px 15px;
+            z-index: 1000;
+            text-align: center;
+        }
+        .inner-menu-item > a { 
+            display: block;
+            padding: 5px 10px;
+            color: rgb(213, 76, 76);
+        }
+        .inner-menu-item > a:hover { 
+            background: white;
+        }
+        .search-bar {
+            height: 26px;
+            padding: 7px;
+        }
+        .input-search {
+            display: block;
+            float: right;
+            background-color: #FFFFFF;
+            border: 1px solid #e3e3e3;
+            border-radius: 10px 0 0 10px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            width: 130px; 
+            height: 24px;
+            padding: 0 0 0 10px;
+            font-size: 12px;
+            color: #222222;
+        }
+        .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        .input-search-submit {
+            display: block;
+            float: right;
+
+            width: 50px; height: 26px;
+            border-radius: 0 10px 10px 0;
+            border: 1px solid #CCCCCC;
+            margin-left: -1px;
+            
+        }
+        #content { 
+            overflow: hidden; 
+        }
+        #main-section {
+            float: left;
+            width: 680px;
+        }
+        #main-aside {
+            display: inline-block;
+            width: 120px;
+            margin-left: 80px;
+            position: fixed;
+            bottom: 30;
+            text-align: center;
+        }
+        article {
+            padding: 0 10px 20px 10px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .article-header { 
+            padding: 20px 0; 
+        }
+        .article-title {
+            font-size: 23px; 
+            font-weight: 700; 
+            padding-bottom: 10px;
+        }
+        .article-subtitle { 
+            font-size: 20px;  
+        }
+        .article-body {
+            font-size: 14px; 
+        }
+        .aside-list { 
+            padding: 10px 0 30px 0; 
+
+        }
+        .aside-list > h3 {
+            font-size: 15px;
+            font-weight: 600; 
+        }
+        .aside-list li a {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #6C6C6C;
+        }
+        #main-footer {
+            margin: 40px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #a3a3a3;
+        }
+        .images{
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        /* article-body가 접혔을 때 추가되는 클래스 */
+        .bodyHidden{
+            display: none;
+        }
+        .titleChange{
+            color:#514e4e;
+        }
+        .explain{
+            font-size: 12px;
+            color:#bbb9b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+            <img class="background" src="image/background.png" width="920px"/>
+            <hgroup>
+                <h1 class="master-emoticon">🌮</h1>
+                <br/> 
+                <h1 class="master-title">맛집 블로그</h1>
+                <!-- <br/>  -->
+                <!-- <h2 class="master-description">2019312137 윤효정</h2> -->
+            </hgroup>
+        </header>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <a class="menu-title best" href="main.html">최고의 맛집</a>
+                    </li>
+                    <li class="outer-menu-item">
+                        <a class="menu-title hyehwa" href="hyehwa.html">혜 화</a>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="hyehwa.html#first">🌮</a></li> 
+                            <li class="inner-menu-item"><a href="hyehwa.html#second">🥩</a></li> 
+                            <li class="inner-menu-item"><a href="hyehwa.html#third">🍔</a></li>
+                            <li class="inner-menu-item"><a href="hyehwa.html#fourth">🍜</a></li>
+                            <li class="inner-menu-item"><a href="hyehwa.html#fifth">🍣</a></li>
+                        </ul> 
+                    </li>
+                    <li class="outer-menu-item">
+                        <a class="menu-title others" href="others.html">그 외</a>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="others.html#first">보쌈</a></li> 
+                            <li class="inner-menu-item"><a href="others.html#second">🍤</a></li> 
+                            <li class="inner-menu-item"><a href="others.html#third">🍚</a></li> 
+                        </ul> 
+                    </li>
+                </ul> 
+            </div>
+            <div class="pull-right"> 
+                <div class="search-bar">
+                    <form>
+                        <input type="submit" class="input-search-submit" value="검색"/>
+                        <input type="text" class="input-search" placeholder="가게이름을 검색해보세요." />
+                    </form>
+                </div>
+            </div> 
+        </nav>
+        <div id="content">
+            <section id="main-section">
+                <article>
+                    <div class="article-header"  id="title">
+                        <h1 class="article-title">이번 달 최고의 맛집</h1>
+                        <br/>
+                        <p>이번 달에 방문했던 맛집 가운데 최고의 맛집은?!</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header"  id="first">
+                        <br/>
+                        <h3 class="article-subtitle" id="subtitle">🍔 벅벅 🍔</h3> 
+                        <br/>
+                    </div>
+                    <div class="article-body">
+                        <div class="images">
+                            <img src="image/벅벅.png" width="400" height="500"/>
+                            <img src="image/벅벅2.png" width="400" height="500"/>
+                        </div>
+                        <br />
+                        <br />
+                        <h3 class="location">위치</h3>
+                        <br/>
+                        <p>서울 종로구 명륜길 48 1층</p>
+                        <br />
+                        <h3 class="star">별점</h3>
+                        <br />
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <br />
+                        <p>이때까지 먹어본 햄버거 중에서 진짜 제일 맛있는 곳! 쿠폰도 벌써 2장이나 모았다. 학교 옆에 있어서 강의 전후엔 방문하기 편하지만, 집에서 가기엔 좀 접근성이 떨어지는 편... 풍자 또간집에서 혜화 맛집을 물어본다면 단연 벅벅밖에 떠오르지 않지만, 더 유명해지만 진짜 내 자리가 없을 것 같아서 말할 수 없는 그런 곳!! 주변 친구들 데려갔을 때 반응이 정말 정말 좋았다!! 주변 친구들에게 자신 있게 소개해줄 수 있는 혜화 최고의 맛집 </p>
+                    </div> 
+                </article>
+                <article>
+                    <div class="article-header" id="second">
+                        <br/>
+                        <h3 class="article-subtitle" >🍣 히든스시 🍣</h3> 
+                        <br/>
+                    </div>
+                    <div class="article-body">
+                        <img src="image/히든스시.png"  width="500" height="400"/>
+                        <br />
+                        <br />
+                        <h3 class="location">위치</h3>
+                        <br/>
+                        <p>서울 종로구 대명길 27 지하 1층</p>
+                        <br />
+                        <h3 class="star">별점</h3>
+                        <br />
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <br />
+                        <p>다들 기꾸스시만 갈 때 나는 꿋꿋이 히든 스시를 간다,,, 아무리 추천해줘도 다들 어디있는지조차 잘 모르는 가게. 그냥 맛있다. 같이 주시는 우동도 맛있다. 모양새보다 훨 맛있다. 좋은 날이면 찾게 되는 곳</p> 
+                    </div>
+                </article>
+            </section>
+            <aside id="main-aside">
+                <div class="aside-list">
+                    <h3>목차</h3> 
+                    <ul>
+                        <li><a href="#title">최고의 맛집</a></li> 
+                        <li><a href="#first">벅벅</a></li> 
+                        <li><a href="#second">히든스시</a></li> 
+                    </ul> 
+                </div>
+                <div class="aside-list"> 
+                    <h3>다른 글</h3>
+                    <ul>
+                        <li><a href="hyehwa.html">혜화의 맛집</a></li> 
+                        <li><a href="others.html">다른 지역의 맛집</a></li> 
+                    </ul> 
+                </div>
+                <div class="totop">
+                    <h1>🔝</h1>
+                </div>
+            </aside> 
+        </div>
+        <footer id="main-footer">
+            <p>성균관대학교 2019312137 윤효정</p>
+        </footer>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () { $('.outer-menu-item').hover(function () {
+            $(this).find('.inner-menu').show();
+            }, function () {
+            $(this).find('.inner-menu').hide();
+            });
+        });
+
+        //최상단 이동 기능: top 버튼 누르면 가장 위로 화면을 이동
+        const totop = document.querySelector('.totop');
+        totop.addEventListener('click',()=>{
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        //토글 기능: 가게 이름(.article-subtitle)을 누르면 내용 접힘
+        const subtitles = document.querySelectorAll('.article-subtitle');
+        subtitles.forEach((subtitle)=>{
+            subtitle.addEventListener('click',()=>{
+                const article  = subtitle.closest('article');ㄱ
+                const articleBody = article.querySelector('.article-body');
+                articleBody.classList.toggle('bodyHidden');
+                subtitle.classList.toggle('titleChange');
+                
+                //body가 접혔을 때 나타나는 내용
+                let explain = article.querySelector('.explain');
+                if (explain) {
+                    explain.remove();
+                } else {
+                    explain = document.createElement('p');
+                    explain.classList.add('explain');
+                    explain.textContent = '가게 이름을 클릭하면 더 많은 정보를 볼 수 있어요!';
+                    article.appendChild(explain);
+                }
+            })
+        });
+
+        //검색 기능
+        const submit = document.querySelector('.input-search-submit');
+        const input = document.querySelector('.input-search');
+
+        submit.addEventListener('click',(e)=>{
+            e.preventDefault();
+            const inputValue = input.value;
+
+            const match = Array.from(subtitles).filter((subtitle)=>
+                subtitle.textContent.includes(inputValue)
+            );
+
+            if(match.length > 0){
+                match[0].scrollIntoView({behavior:"smooth"});
+            } else {
+                alert('찾을 수 없는 결과입니다😂');
+            }
+        });
+
+
+    </script>
+</body> 
+</html>

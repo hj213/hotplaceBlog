@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2019312137 윤효정</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+            font-family: ‘맑은 고딕’, ‘Malgun Gothic’, Gothic, sans-serif;
+        }
+        a { 
+            text-decoration: none; 
+        }
+        li { 
+            list-style: none; 
+        }
+        body {
+            width: 1000px; 
+            margin: 0 auto; 
+            background: #E6E6E6;
+        }
+        #page-wrapper {
+            background: white;
+            margin: 40px; 
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        } 
+        #main-header { 
+            padding: 50px 0px 50px 20px; 
+        } 
+        .background{
+            border-radius: 5px 5px 0 0;
+            margin: -60px 0px -35px -40px; 
+        }
+        .master-emoticon {
+            font-size: 60px;
+        }
+        .master-title {
+            font-size: 30px;
+            color: #181818;
+        }
+        .master-description {
+            font-size: 15px; 
+            font-weight: 500;
+            color: #383838;
+        }
+        #main-navigation {
+            border-bottom: 1px solid #eeeeee;
+            margin-bottom: 20px;
+            padding: 0 15px 15px 15px;
+        }
+        .outer-menu-item {
+            height: 30px;
+            float: left;
+            position: relative;
+        } 
+        /* .outer-menu-item:hover { 
+            background: rgb(177, 60, 60); 
+            color: rgb(255, 255, 255);
+        } */
+        .menu-title {
+            display: block;
+            height: 25px; 
+            line-height: 25px;
+            text-align: center;
+            padding: 5px 15px;
+            background: rgb(244, 243, 243);
+            color: rgb(213, 76, 76);
+            border-radius: 10px;
+            margin-right: 10px;
+
+        }
+        .menu-title > a {
+            text-decoration: none;
+        }
+        .menu-title:hover{
+            color: rgb(36, 48, 101);
+        }
+        .others {
+            background: rgb(244, 243, 243);
+            color: rgb(36, 48, 101);
+        }
+        .inner-menu {
+            display: none;
+            position: absolute;
+            top: 28px; left: 0;
+            width: 86%;
+            background:  rgb(244, 243, 243);
+            border-radius: 0 0 15px 15px;
+            z-index: 1000;
+            text-align: center;
+        }
+        .inner-menu-item > a { 
+            display: block;
+            padding: 5px 10px;
+            color: rgb(213, 76, 76);
+        }
+        .inner-menu-item > a:hover { 
+            background: white;
+        }
+        .search-bar {
+            height: 26px;
+            padding: 7px;
+        }
+        .input-search {
+            display: block;
+            float: right;
+            background-color: #FFFFFF;
+            border: 1px solid #e3e3e3;
+            border-radius: 10px 0 0 10px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            width: 130px; 
+            height: 24px;
+            padding: 0 0 0 10px;
+            font-size: 12px;
+            color: #222222;
+        }
+        .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        .input-search-submit {
+            display: block;
+            float: right;
+
+            width: 50px; height: 26px;
+            border-radius: 0 10px 10px 0;
+            border: 1px solid #CCCCCC;
+            margin-left: -1px;
+            
+        }
+        #content { 
+            overflow: hidden; 
+        }
+        #main-section {
+            float: left;
+            width: 680px;
+        }
+        #main-aside {
+            display: inline-block;
+            width: 120px;
+            margin-left: 80px;
+            position: fixed;
+            bottom: 30;
+            text-align: center;
+        }
+        article {
+            padding: 0 10px 20px 10px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .article-header { 
+            padding: 20px 0; 
+        }
+        .article-title {
+            font-size: 23px; 
+            font-weight: 700; 
+            padding-bottom: 10px;
+        }
+        .article-subtitle { 
+            font-size: 20px;  
+        }
+        .article-body {
+            font-size: 14px; 
+        }
+        .aside-list { 
+            padding: 10px 0 30px 0; 
+
+        }
+        .aside-list > h3 {
+            font-size: 15px;
+            font-weight: 600; 
+        }
+        .aside-list li a {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #6C6C6C;
+        }
+        #main-footer {
+            margin: 40px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #a3a3a3;
+        }
+        .images{
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        /* article-body가 접혔을 때 추가되는 클래스 */
+        .bodyHidden{
+            display: none;
+        }
+        .titleChange{
+            color:#514e4e;
+        }
+        .explain{
+            font-size: 12px;
+            color:#bbb9b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+            <img class="background" src="image/background.png" width="920px"/>
+            <hgroup>
+                <h1 class="master-emoticon">🌮</h1>
+                <br/> 
+                <h1 class="master-title">맛집 블로그</h1>
+                <!-- <br/>  -->
+                <!-- <h2 class="master-description">2019312137 윤효정</h2> -->
+            </hgroup>
+        </header>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <a class="menu-title best" href="main.html">최고의 맛집</a>
+                    </li>
+                    <li class="outer-menu-item">
+                        <a class="menu-title hyehwa" href="hyehwa.html">혜 화</a>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="hyehwa.html#first">🌮</a></li> 
+                            <li class="inner-menu-item"><a href="hyehwa.html#second">🥩</a></li> 
+                            <li class="inner-menu-item"><a href="hyehwa.html#third">🍔</a></li>
+                            <li class="inner-menu-item"><a href="hyehwa.html#fourth">🍜</a></li>
+                            <li class="inner-menu-item"><a href="hyehwa.html#fifth">🍣</a></li>
+                        </ul> 
+                    </li>
+                    <li class="outer-menu-item">
+                        <a class="menu-title others" href="others.html">그 외</a>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="others.html#first">보쌈</a></li> 
+                            <li class="inner-menu-item"><a href="others.html#second">🍤</a></li> 
+                            <li class="inner-menu-item"><a href="others.html#third">🍚</a></li> 
+                        </ul> 
+                    </li>
+                </ul> 
+            </div>
+            <div class="pull-right"> 
+                <div class="search-bar">
+                    <form>
+                        <input type="submit" class="input-search-submit" value="검색"/>
+                        <input type="text" class="input-search" placeholder="가게이름을 검색해보세요." />
+                    </form>
+                </div>
+            </div> 
+        </nav>
+        <div id="content">
+            <section id="main-section">
+                <article>
+                    <div class="article-header"  id="title">
+                        <h1 class="article-title">다른 지역의 맛집</h1>
+                        <br/>
+                        <p>북촌, 인사동 그리고 문래</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header"  id="first">
+                        <br/>
+                        <h3 class="article-subtitle" id="subtitle">🥓 인사동마늘보쌈 🥓</h3> 
+                        <br/>
+                    </div>
+                    <div class="article-body">
+                        <div class="images">
+                            <img src="image/마늘보쌈.png" width="400" height="500"/>
+                            <img src="image/마늘보쌈2.png" width="400" height="500"/>
+                        </div>
+                        <br />
+                        <br />
+                        <h3 class="location">위치</h3>
+                        <br/>
+                        <p>서울 종로구 인사동8길 12-5</p>
+                        <br />
+                        <h3 class="star">별점</h3>
+                        <br />
+                        <p>⭐️⭐️⭐️⭐️</p>
+                        <br />
+                        <p>고기는 고소고소 부들부들하고 마늘소스는 매콤달콤하니 금상첨화. 파전도 바삭하니 맛있다! 다만 너무 시끌벅적해서 정신이 없다... </p>
+                    </div> 
+                </article>
+                <article>
+                    <div class="article-header" id="second">
+                        <br/>
+                        <h3 class="article-subtitle" >🍚 안암 🍚</h3> 
+                        <br/>
+                    </div>
+                    <div class="article-body">
+                        <img src="image/안암.png"  width="500" height="400"/>
+                        <br />
+                        <br />
+                        <h3 class="location">위치</h3>
+                        <br/>
+                        <p>서울 종로구 북촌로5길 10 1층</p>
+                        <br />
+                        <h3 class="star">별점</h3>
+                        <br />
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <br />
+                        <p>북촌에 있는 안암🤔 비린 맛에 국밥을 잘 못먹는 내가 한 그릇을 싹 비웠던 국밥 맛집. 자리는 바 형식으로 앉을 수 있고 굉장히 정갈하단 인상을 받았다! 메뉴는 국밥밖에 없었는데 국밥 크기와 고기 양을 추가할 수 있었던 것 같다. 나는 기본을 시켰는데도 고기는 충분했다!! 고수와 매콤한 다대기 같은 것을 곁들여 먹을 수 있어 좋았다.</p> 
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header" id="second">
+                        <br/>
+                        <h3 class="article-subtitle" >🍤 냐옹지마 🍤</h3> 
+                        <br/>
+                    </div>
+                    <div class="article-body">
+                        <div class="images">
+                            <img src="image/냐옹지마.png" width="400" height="500"/>
+                            <img src="image/냐옹지마2.png" width="400" height="500"/>
+                            <img src="image/냐옹지마3.png" width="400" height="500"/>
+                            <img src="image/냐옹지마4.png" width="400" height="500"/>
+                            <img src="image/냐옹지마5.png" width="400" height="500"/>
+
+                        </div>
+                        <br />
+                        <br />
+                        <h3 class="location">위치</h3>
+                        <br/>
+                        <p>서울 영등포구 도림로141다길 13-2 1층 </p>
+                        <br />
+                        <h3 class="star">별점</h3>
+                        <br />
+                        <p>⭐️⭐️⭐️⭐️</p>
+                        <br />
+                        <p>예약하기 힘들다는 곳을 친구가 잡아줘서 다녀왔다. 아직도 저 닭 연골 튀김이 먹고싶다...🙄 나머지도 그냥저냥 맛있었다. 돈 많이 벌면 또 가야지</p> 
+                    </div>
+                </article>
+            </section>
+            <aside id="main-aside">
+                <div class="aside-list">
+                    <h3>목차</h3> 
+                    <ul>
+                        <li><a href="#title">다른 지역의 맛집</a></li> 
+                        <li><a href="#first">인사동마늘보쌈</a></li> 
+                        <li><a href="#second">안암</a></li> 
+                        <li><a href="#second">냐옹지마</a></li> 
+                    </ul> 
+                </div>
+                <div class="aside-list"> 
+                    <h3>다른 글</h3>
+                    <ul>
+                        <li><a href="main.html">최고의 맛집</a></li> 
+                        <li><a href="hyehwa.html">혜화의 맛집</a></li> 
+                    </ul> 
+                </div>
+                <div class="totop">
+                    <h1>🔝</h1>
+                </div>
+            </aside> 
+        </div>
+        <footer id="main-footer">
+            <p>성균관대학교 2019312137 윤효정</p>
+        </footer>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () { $('.outer-menu-item').hover(function () {
+            $(this).find('.inner-menu').show();
+            }, function () {
+            $(this).find('.inner-menu').hide();
+            });
+        });
+
+        //top 버튼 누르면 가장 위로 화면을 이동
+        const totop = document.querySelector('.totop');
+        totop.addEventListener('click',()=>{
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        //가게 이름(.article-subtitle)을 누르면 내용 접힘
+        const subtitles = document.querySelectorAll('.article-subtitle');
+        subtitles.forEach((subtitle)=>{
+            subtitle.addEventListener('click',()=>{
+                const article  = subtitle.closest('article');
+                const articleBody = article.querySelector('.article-body');
+                articleBody.classList.toggle('bodyHidden');
+                subtitle.classList.toggle('titleChange');
+                
+                //body가 접혔을 때 나타나는 내용!
+                let explain = article.querySelector('.explain');
+                if (explain) {
+                    explain.remove();
+                } else {
+                    explain = document.createElement('p');
+                    explain.classList.add('explain');
+                    explain.textContent = '가게 이름을 클릭하면 더 많은 정보를 볼 수 있어요!';
+                    article.appendChild(explain);
+                }
+            })
+        });
+
+        //검색 기능
+        const submit = document.querySelector('.input-search-submit');
+        const input = document.querySelector('.input-search');
+
+        submit.addEventListener('click',(e)=>{
+            e.preventDefault();
+            const inputValue = input.value;
+
+            const match = Array.from(subtitles).filter((subtitle)=>
+                subtitle.textContent.includes(inputValue)
+            );
+
+            if(match.length > 0){
+                match[0].scrollIntoView({behavior:"smooth"});
+            } else {
+                alert('찾을 수 없는 결과입니다😂');
+            }
+        });
+
+
+    </script>
+</body> 
+</html>
